@@ -1,0 +1,5 @@
+package apresentacao;
+
+public enum Menu {
+    MODELO, AVIAO, TESTE, SINDICATO, EMPREGADO, TECNICO, CONTROLADOR_AEREO, TESTAGEM, PERITO_EM, APLICA;
+}

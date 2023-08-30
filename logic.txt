@@ -1,0 +1,33 @@
+Modelo(#codigo, nome, capacidade, peso)
+
+Aviao(#nroRegistro, nome, codigo)
+    codigo references Modelo
+
+Teste(#idANAC, nome, pont_max, codigo)
+    codigo references Modelo
+
+Sindicato(#nroMembro, nome)
+
+Empregado(#matricula, nome, telefone, salario, endereco, nroMembro)
+    nroMembro references Sindicato
+
+Tecnico(#matricula, nroMembro)
+    matricula references Empregado
+    nroMembro references Sindicato
+
+Controlador_Aereo(#matricula, data_Exame, nroMembro)
+    matricula references Empregado
+    nroMembro references Sindicato
+
+Testagem(#Id, nroRegistro, matricula, idANAC)
+    nroRegistro references Aviao
+    matricula references Empregado
+    idANAC references Teste
+
+Perito_Em(#matricula, #codigo)
+    matricula references Tecnico
+    codigo references modelo
+
+Aplica(#matricula, #idANAC, data, horas_gastas, pont_obtida)
+    matricula references Tecnico
+    idANAC references Teste
